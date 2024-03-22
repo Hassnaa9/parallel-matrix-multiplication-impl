@@ -1,5 +1,5 @@
 # parallel-matrix-multiplication-impl
-a high performance program with hpx library to calculate the multiplication of two matrices
+a high performance program with hpx library to calculate the multiplication of two matrices with parallel algorithm
 
 to Run this file you must 
 * install hpx
