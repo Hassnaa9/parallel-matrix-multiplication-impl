@@ -1,8 +1,3 @@
-#include <hpx/algorithm.hpp>
-#include <hpx/execution.hpp>
-#include <hpx/init.hpp>
-#include <iostream>
-#include <vector>
 #include "matrix_multiplication.h"
 
 
