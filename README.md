@@ -4,8 +4,8 @@ a high performance program with hpx library to calculate the multiplication of t
 to Run this file you must 
 * install hpx
 * install CMake (at least version 3.19)
-* then in the directory of the program Run this commands
-* mkdir build && cd build
-* cmake -DCMAKE_PREFIX_PATH=/path/to/hpx/installation ..
-* make all
-./my_hpx_program
+* then in the directory of the program Run this commands:
+  * mkdir build && cd build
+  * cmake -DCMAKE_PREFIX_PATH=/path/to/hpx/installation ..
+  * make all
+  * ./my_hpx_program
