@@ -1,5 +1,60 @@
 #include "matrix_multiplication.h"
 
+
+
+/////////hpx main/////////////
+int hpx_main(hpx::program_options::variables_map& vm)
+{
+
+    //  matrix sizes
+    int matrix1_rows ;
+    int matrix1_cols ;
+    int matrix2_rows ;
+    int matrix2_cols ;
+    int Res_matrix_rows;
+    int Res_matrix_cols;
+
+/////Get the data of matrices///////
+    std::cout << "Matrix 1 : \n";
+    std::cout << "Enter the number of rows : ";
+    std::cin >> matrix1_rows;
+    std::cout << "Enter the number of columns : ";
+    std::cin >> matrix1_cols;
+
+    std::cout << "Matrix 2 : \n";
+    std::cout << "Enter the number of rows : ";
+    std::cin >> matrix2_rows;
+    std::cout << "Enter the number of columns : ";
+    std::cin >> matrix2_cols;
+
+    Res_matrix_rows = matrix1_rows;
+    Res_matrix_cols = matrix2_cols;
+
+    // initialize matrices 
+    Matrix Res_matrix(Res_matrix_rows * matrix2_cols);
+    Matrix matrix1(matrix1_rows * matrix1_cols);
+    Matrix matrix2(matrix2_rows * matrix2_cols);
+
+    //////set matrices/////
+    set_matrix(matrix1, matrix1_rows, matrix1_cols);
+    set_matrix(matrix2, matrix2_rows, matrix2_cols);
+
+
+    // Print the 3 matrices
+    std::cout<<"Matrix 1 : \n";
+    print_matrix(matrix1, matrix1_rows, matrix1_cols);
+    std::cout<<"Matrix 2 : \n";
+    print_matrix(matrix2, matrix2_rows, matrix2_cols);
+
+    // multiplication//
+    multiplication(matrix1 , matrix2 , Res_matrix , Res_matrix_rows ,Res_matrix_cols);
+    std::cout<<"The result of multiplication : \n";
+    print_matrix(Res_matrix, Res_matrix_rows, Res_matrix_cols);
+
+    return hpx::local::finalize();
+}
+
+
 int main(int argc, char* argv[])
 {
     using namespace hpx::program_options;
